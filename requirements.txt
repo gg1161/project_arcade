@@ -1,0 +1,2 @@
+arcade==2.0.0
+pyinstaller==6.18.0
