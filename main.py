@@ -1,8 +1,8 @@
 import arcade
 
 global_background_music = None
-SCREEN_WIDTH = 2560
-SCREEN_HEIGHT = 1920
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 800
 SCREEN_TITLE = "проект"
 PLAYER_SPEED = 5
 GRAVITY = 0.6
@@ -10,9 +10,9 @@ JUMP_SPEED = 15
 ENEMY_SPEED = 2
 
 LEVELS = [
-    ("C:/Users/ersov/PycharmProjects/PythonProject/resources/tiled_maps/level_1.json", arcade.color.DARK_GREEN, "1 УРОВЕНЬ"),
-    ("C:/Users/ersov/PycharmProjects/PythonProject/resources/tiled_maps/map2_level_1.json",arcade.color.DARK_PASTEL_PURPLE, "2 УРОВЕНЬ"),
-    ("C:/Users/ersov/PycharmProjects/PythonProject/resources/tiled_maps/map2_level_2.json",arcade.color.SKY_BLUE, "3 УРОВЕНЬ")
+    ("resources/tiled_maps/level_1.json", arcade.color.DARK_GREEN, "1 УРОВЕНЬ"),
+    ("resources/tiled_maps/map2_level_1.json",arcade.color.DARK_PASTEL_PURPLE, "2 УРОВЕНЬ"),
+    ("resources/tiled_maps/map2_level_2.json",arcade.color.SKY_BLUE, "3 УРОВЕНЬ")
 ]
 
 
@@ -33,7 +33,7 @@ class StartView(arcade.View):
 
     def on_key_press(self, key, _):
         if key == arcade.key.SPACE:
-            test_sound = arcade.Sound("C:/Users/ersov/PycharmProjects/PythonProject/resources/music/1918.mp3")
+            test_sound = arcade.Sound("resources/music/1918.mp3")
             test_sound.play(volume=0.5, loop=True)
 
             game_view = GameView()
@@ -55,13 +55,13 @@ class Enemy(arcade.Sprite):
 
     def setup_sprite(self):
         if self.enemy_type == "bee":
-            self.texture = arcade.load_texture("C:/Users/ersov/PycharmProjects/PythonProject/resources/images/enemies/bee.png")
+            self.texture = arcade.load_texture("resources/images/enemies/bee.png")
             self.scale = 0.7
         elif self.enemy_type == "slime":
-            self.texture = arcade.load_texture("C:/Users/ersov/PycharmProjects/PythonProject/resources/images/enemies/slimeBlue.png")
+            self.texture = arcade.load_texture("resources/images/enemies/slimeBlue.png")
             self.scale = 0.8
         elif self.enemy_type == "worm":
-            self.texture = arcade.load_texture("C:/Users/ersov/PycharmProjects/PythonProject/resources/images/enemies/wormGreen.png")
+            self.texture = arcade.load_texture("resources/images/enemies/wormGreen.png")
             self.scale = 0.6
             self.alpha = 180
 
@@ -123,7 +123,7 @@ class WinView(arcade.View):
 # Снаряд
 class Projectile(arcade.Sprite):
     def __init__(self, x, y, direction):
-        super().__init__("C:/Users/ersov/PycharmProjects/PythonProject/resources/images/space_shooter/laserBlue01.png", 0.8)
+        super().__init__("resources/images/space_shooter/laserBlue01.png", 0.8)
         self.center_x = x
         self.center_y = y
         self.change_x = 12 * direction
@@ -171,22 +171,22 @@ class GameView(arcade.View):
                                            arcade.color.YELLOW, 28, anchor_x="center")
 
         # Звуки
-        self.shoot_sound = arcade.load_sound("C:/Users/ersov/PycharmProjects/PythonProject/resources/sounds/laser1.wav")
-        self.collect_coin_sound = arcade.Sound("C:/Users/ersov/PycharmProjects/PythonProject/resources/sounds/coin5.wav")
-        self.hit_enemy_sound = arcade.Sound("C:/Users/ersov/PycharmProjects/PythonProject/resources/sounds/hurt5.wav")
+        self.shoot_sound = arcade.load_sound("resources/sounds/laser1.wav")
+        self.collect_coin_sound = arcade.Sound("resources/sounds/coin5.wav")
+        self.hit_enemy_sound = arcade.Sound("resources/sounds/hurt5.wav")
 
         # Анимации
         self.idle_texture = arcade.load_texture(
-            "C:/Users/ersov/PycharmProjects/PythonProject/resources/images/animated_characters/robot/robot_idle.png"
+            "resources/images/animated_characters/robot/robot_idle.png"
         )
         self.walk_textures.clear()
         for i in range(8):
             texture = arcade.load_texture(
-                f"C:/Users/ersov/PycharmProjects/PythonProject/resources/images/animated_characters/robot/robot_walk{i:02d}.png"
+                f"resources/images/animated_characters/robot/robot_walk{i:02d}.png"
             )
             self.walk_textures.append(texture)
         self.jump_texture = arcade.load_texture(
-            "C:/Users/ersov/PycharmProjects/PythonProject/resources/images/animated_characters/robot/robot_jump.png"
+            "resources/images/animated_characters/robot/robot_jump.png"
         )
 
         # Игрок
@@ -378,3 +378,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
