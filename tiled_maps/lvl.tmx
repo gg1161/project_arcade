@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="120" height="20" tilewidth="32" tileheight="32" infinite="1" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" source="rr.tsx"/>
+ <layer id="1" name="Platforms" width="120" height="20">
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="-16" width="16" height="16">
+   eJxjYBgFo2AUDCRgBWJ2MvUKArEQEAuTqR8AFlQAQw==
+  </chunk>
+   <chunk x="-16" y="0" width="16" height="16">
+   eJxjYKAPEARiITSMC7BiEVMEYiUkrEyEPcJk6FfEoYZe+g2B2AiKjXGIo8uNglFALgAAH4MGIQ==
+  </chunk>
+   <chunk x="0" y="0" width="16" height="16">
+   eJxTZGBgUAJiZQbygOIQ128IxEZAbEym/sEMBIFYCAcWJkI/LGyxYWLCe6jrh6UNbHi4pBcANKgIjw==
+  </chunk>
+  </data>
+ </layer>
+ <layer id="2" name="Coins" width="120" height="20">
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="0" width="16" height="16">
+   eJxjYBgFQwVwALHjQDtiFAwrAACs8ABK
+  </chunk>
+  </data>
+ </layer>
+</map>
